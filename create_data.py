@@ -14,7 +14,7 @@ with open("json_data_1.json", "r", encoding="utf-8") as f:
 X = [[x] for x in data["first"]]
 y = data["second"]
 
-reg = LinearRegression().fit(X, y)
+reg = LinearRegression(n_jobs=-1).fit(X, y)
 
 dump(reg, "model.joblib")
 
