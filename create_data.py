@@ -2,6 +2,7 @@ from this import d
 import numpy as np
 import pandas as pd
 import json
+from joblib import dump
 
 
 from sklearn.linear_model import LinearRegression
@@ -15,5 +16,6 @@ y = data["second"]
 
 reg = LinearRegression().fit(X, y)
 
+dump(reg, "model.joblib")
 
 print(reg.score(X, y))
