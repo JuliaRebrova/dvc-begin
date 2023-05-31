@@ -1,0 +1,15 @@
+schema: '2.0'
+stages:
+  train2:
+    cmd: python app/train_model.py
+    deps:
+    - path: app/train_model.py
+      md5: 8472ec53ef571754283a42afa771c3d8
+      size: 590
+    - path: data/row_dataset.xlsx
+      md5: c7ae617427f027569c25b64dbdb03cf5
+      size: 8252
+    outs:
+    - path: models/model.joblib
+      md5: fc0169f2f6870fd2ba66bc105be5d156
+      size: 1162

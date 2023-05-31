@@ -1,0 +1,8 @@
+stages:
+  train2:
+    cmd: python app/train_model.py
+    deps:
+    - app/train_model.py
+    - data/row_dataset.xlsx
+    outs:
+    - models/model.joblib
