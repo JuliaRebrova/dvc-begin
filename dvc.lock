@@ -7,9 +7,22 @@ stages:
       md5: 8472ec53ef571754283a42afa771c3d8
       size: 590
     - path: data/row_dataset.xlsx
-      md5: c7ae617427f027569c25b64dbdb03cf5
-      size: 8252
+      md5: 258d04c2ad585eae9c6c5711646c6d51
+      size: 7106
     outs:
     - path: models/model.joblib
-      md5: fc0169f2f6870fd2ba66bc105be5d156
-      size: 1162
+      md5: a8713af134ead78b301d561f9c4edb6c
+      size: 1066
+  eval:
+    cmd: python app/make_predictions.py
+    deps:
+    - path: app/make_predictions.py
+      md5: fbbd1f581b108446890f45d3ebe01565
+      size: 600
+    - path: data/row_dataset.xlsx
+      md5: 258d04c2ad585eae9c6c5711646c6d51
+      size: 7106
+    outs:
+    - path: metrics/metrics.txt
+      md5: 9a9553d3fe7111a3be70a65810957802
+      size: 13

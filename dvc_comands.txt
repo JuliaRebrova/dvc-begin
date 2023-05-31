@@ -1,0 +1,29 @@
+dvc run --name train \
+-f test_file.dvc \
+-d app/train_model.py \
+-d data/row_dataset.xlsx \
+-o models/model.joblib \
+python app/train_model.py
+
+
+dvc stage add -n train2 \
+-d app/train_model.py \
+-d data/row_dataset.xlsx \
+-o models/model.joblib \
+python app/train_model.py
+
+dvc repro train2
+
+dvc stage add -n eval \
+-d app/make_predictions.py \
+-d data/row_dataset.xlsx \
+-m metrics/metrics.txt \
+python app/make_predictions.py
+
+dvc stage add --force -n eval \
+-d app/make_predictions.py \
+-d data/row_dataset.xlsx \
+-m metrics/metrics.txt \
+python app/make_predictions.py
+
+dvc repro eval

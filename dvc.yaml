@@ -6,3 +6,10 @@ stages:
     - data/row_dataset.xlsx
     outs:
     - models/model.joblib
+  eval:
+    cmd: python app/make_predictions.py
+    deps:
+    - app/make_predictions.py
+    - data/row_dataset.xlsx
+    metrics:
+    - metrics/metrics.txt
