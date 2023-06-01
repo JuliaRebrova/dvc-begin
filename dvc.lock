@@ -7,12 +7,12 @@ stages:
       md5: 8472ec53ef571754283a42afa771c3d8
       size: 590
     - path: data/row_dataset.xlsx
-      md5: 258d04c2ad585eae9c6c5711646c6d51
-      size: 7106
+      md5: 0207e28af0294338c8b5d0a507051220
+      size: 8251
     outs:
     - path: models/model.joblib
-      md5: a8713af134ead78b301d561f9c4edb6c
-      size: 1066
+      md5: 9e244e91c61a9febdffff0738daf8fb1
+      size: 1162
   eval:
     cmd: python app/make_predictions.py
     deps:
@@ -20,9 +20,9 @@ stages:
       md5: fbbd1f581b108446890f45d3ebe01565
       size: 600
     - path: data/row_dataset.xlsx
-      md5: 258d04c2ad585eae9c6c5711646c6d51
-      size: 7106
+      md5: 0207e28af0294338c8b5d0a507051220
+      size: 8251
     outs:
     - path: metrics/metrics.txt
-      md5: 9a9553d3fe7111a3be70a65810957802
-      size: 13
+      md5: 6cc46c98e88a0f40ac55fc1b1b36a482
+      size: 28
